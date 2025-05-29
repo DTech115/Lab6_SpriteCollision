@@ -99,7 +99,6 @@ int main(void)
 					if (!orb[i].getStatus()) {
 						orb[i].fire();
 					}
-					orb[i].drawYinYang(); //redraws bitmap!
 				}
 			}
 		}
@@ -141,6 +140,7 @@ int main(void)
 			{
 				orb[i].erase_yinyang();
 				score += orb[i].move_yinyang(reimu.getX(), reimu.getY(), 47, 60, height-40);
+				orb[i].drawYinYang();
 
 				//score text here!
 				al_draw_filled_rectangle(0, 490, width/2, 520, al_map_rgb(0, 0, 0));

@@ -48,10 +48,16 @@ void yinyang::create_yinyang_bitmap(ALLEGRO_DISPLAY* display) {
 	al_set_target_bitmap(yinyang_bmp);
 	al_clear_to_color(al_map_rgb(0, 0, 0));
 
-	int posX = 8;
-	int posY = 8;
+	int x = 8;
+	int y = 8;
 
-	al_draw_filled_rectangle(posX, posY, posX + 5, posY + 5, al_map_rgb(0, 255, 0));
+	al_draw_filled_circle(x, y, 7, al_map_rgb(255, 255, 255)); // white back circle
+
+	al_draw_filled_circle(x, y - 3, 4, al_map_rgb(255, 0, 0));
+	al_draw_filled_triangle(x - 8, y+1, x-5, y -6, x, y-4, al_map_rgb(255, 0, 0));
+	al_draw_line(x - 5, y - 5, x, y - 5, al_map_rgb(255, 0, 0), 1);
+	al_draw_filled_circle(x, y - 4, 1, al_map_rgb(255, 255, 255)); //white eye
+	al_draw_filled_circle(x-3, y + 3, 1, al_map_rgb(255, 0, 0)); //red eye
 }
 
 void yinyang::erase_yinyang()
