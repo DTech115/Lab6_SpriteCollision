@@ -38,7 +38,7 @@ int main(void)
 	al_init_primitives_addon();
 	al_init_font_addon();
 	al_init_ttf_addon();
-	ALLEGRO_FONT* scoreText = al_load_font("DFPPOPCorn-W12.ttf", 18, 0);
+	ALLEGRO_FONT* scoreText = al_load_font("DFPPOPCorn-W12.ttf", 18, 0);	//use font for text
 
 	reimu.create_reimu_bitmap(display);
 
@@ -67,7 +67,7 @@ int main(void)
 					orb[i].fire();
 				}
 			}
-			al_draw_text(scoreText, al_map_rgb(255, 255, 255), 10, 490, 0, "Testing!");
+			
 		}
 		else if (ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE)
 		{
@@ -107,10 +107,16 @@ int main(void)
 			{
 				orb[i].erase_yinyang();
 				score += orb[i].move_yinyang(reimu.getX(), reimu.getY(), 47, 60, height-40);
+
+				//score text here!
+				al_draw_filled_rectangle(0, 490, width/2, 520, al_map_rgb(0, 0, 0));
+				al_draw_textf(scoreText, al_map_rgb(255, 255, 255), 10, 490, 0, "SCORE: %i", score);
 			}
+
 		}
 		al_flip_display();
 	}
+	al_destroy_font(scoreText);	//destroy font
 	al_destroy_event_queue(event_queue);
 	al_destroy_timer(timer);
 	al_destroy_display(display);						//destroy our display object
