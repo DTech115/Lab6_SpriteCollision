@@ -72,21 +72,14 @@ int main(void)
 
 		if (ev.type == ALLEGRO_EVENT_TIMER)
 		{
-			//draw the initial time for the first second
-			al_draw_filled_rectangle(width / 2, 490, width, 520, al_map_rgb(0, 0, 0));
-			al_draw_textf(text, al_map_rgb(255, 255, 255), width, 490, ALLEGRO_ALIGN_RIGHT, "TIME: %i", countdownTime);
-
 			//checks if its the countdown timer
 			if (ev.timer.source == countdown) {
 				
 				if (countdownTime > 0) {
-					//hide previous second time & draw new over it
-					al_draw_filled_rectangle(width / 2, 490, width, 520, al_map_rgb(0, 0, 0));
-					al_draw_textf(text, al_map_rgb(255, 255, 255), width, 490, ALLEGRO_ALIGN_RIGHT, "TIME: %i", countdownTime);
 					countdownTime -= 1;
 				}
 				//once time hits 0, game over
-				else if (countdownTime == 0) {
+				else {
 					done = true;
 				}
 
@@ -148,6 +141,10 @@ int main(void)
 				//score text here!
 				al_draw_filled_rectangle(0, 490, width/2, 520, al_map_rgb(0, 0, 0));
 				al_draw_textf(text, al_map_rgb(255, 255, 255), 10, 490, 0, "SCORE: %i", score);
+
+				//hide previous second time & draw new over it
+				al_draw_filled_rectangle(width / 2, 490, width, 520, al_map_rgb(0, 0, 0));
+				al_draw_textf(text, al_map_rgb(255, 255, 255), width, 490, ALLEGRO_ALIGN_RIGHT, "TIME: %i", countdownTime);
 			}
 
 		}
