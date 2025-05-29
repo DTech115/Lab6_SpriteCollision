@@ -1,13 +1,22 @@
+//DT Nesimi
+
 #include "yinyang.h"
 yinyang::yinyang()
 {
 	alive = false;;
 	srand(time(0));
+	yinyang_bmp = NULL;
+
+}
+yinyang::~yinyang() {
+	al_destroy_bitmap(yinyang_bmp);
 }
 bool yinyang::getStatus()
 {
 	return alive;
 }
+
+
 
 void yinyang::fire()
 {
