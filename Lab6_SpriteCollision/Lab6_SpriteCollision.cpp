@@ -1,5 +1,8 @@
 #include <allegro5\allegro.h>
 #include <allegro5\allegro_primitives.h>
+#include <allegro5/allegro_font.h>
+#include <allegro5/allegro_ttf.h>
+
 #include "reimu.h";
 #include "yinyang.h"
 
@@ -33,6 +36,10 @@ int main(void)
 	//addon init
 	al_install_keyboard();
 	al_init_primitives_addon();
+	al_init_font_addon();
+	al_init_ttf_addon();
+	ALLEGRO_FONT* scoreText = al_load_font("DFPPOPCorn-W12.ttf", 18, 0);
+
 	reimu.create_reimu_bitmap(display);
 
 
@@ -60,6 +67,7 @@ int main(void)
 					orb[i].fire();
 				}
 			}
+			al_draw_text(scoreText, al_map_rgb(255, 255, 255), 10, 490, 0, "Testing!");
 		}
 		else if (ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE)
 		{
