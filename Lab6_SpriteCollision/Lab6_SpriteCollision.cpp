@@ -47,7 +47,9 @@ int main(void)
 	ALLEGRO_FONT* text = al_load_font("DFPPOPCorn-W12.ttf", 18, 0);	//use font for text
 
 	reimu.create_reimu_bitmap(display);
-
+	for (int i = 0; i < 10; i++) {
+		orb[i].create_yinyang_bitmap(display);
+	}
 
 	al_set_target_bitmap(al_get_backbuffer(display));
 	event_queue = al_create_event_queue();
@@ -97,6 +99,7 @@ int main(void)
 					if (!orb[i].getStatus()) {
 						orb[i].fire();
 					}
+					orb[i].drawYinYang(); //redraws bitmap!
 				}
 			}
 		}

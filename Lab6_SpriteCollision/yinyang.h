@@ -20,4 +20,3 @@ private:
 	bool alive;
 	ALLEGRO_BITMAP* yinyang_bmp;
 };
-
