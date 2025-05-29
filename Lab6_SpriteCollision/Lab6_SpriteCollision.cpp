@@ -13,7 +13,7 @@ int main(void)
 
 	//variables
 	int width = 640;
-	int height = 480;
+	int height = 520;
 	bool done = false;
 
 	//allegro variable
@@ -92,13 +92,13 @@ int main(void)
 
 			if (reimu.getSpeed() != 0) {
 				reimu.erase_reimu();
-				reimu.move_reimu(width, height);
+				reimu.move_reimu(width, height-40);
 			}
 			reimu.drawReimu();
 			for (int i = 0; i < 10; i++)
 			{
 				orb[i].erase_yinyang();
-				score += orb[i].move_yinyang(reimu.getX(), reimu.getY(), 47, 60, height);
+				score += orb[i].move_yinyang(reimu.getX(), reimu.getY(), 47, 60, height-40);
 			}
 		}
 		al_flip_display();

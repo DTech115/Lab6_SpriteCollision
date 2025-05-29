@@ -31,8 +31,10 @@ int yinyang::move_yinyang(int reimuX, int reimuY, int width, int length, int hei
 		alive = false;
 		return 1;
 	}
-	if (y > height)
+	if (y > height) {
+		al_draw_filled_rectangle(x, y, x + 5, y + 5, al_map_rgb(0, 0, 0)); //BLACK
 		alive = false;
+	}
 	return 0;
 
 
