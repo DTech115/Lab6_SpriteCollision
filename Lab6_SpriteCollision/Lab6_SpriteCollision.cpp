@@ -131,6 +131,9 @@ int main(void)
 		{
 			redraw = false;
 
+			//al_set_target_bitmap(al_get_backbuffer(display));
+			al_clear_to_color(al_map_rgb(0, 0, 0));
+
 			if (reimu.getSpeed() != 0) {
 				reimu.erase_reimu();
 				reimu.move_reimu(width, height-40);
@@ -141,7 +144,7 @@ int main(void)
 				orb[i].erase_yinyang();
 				score += orb[i].move_yinyang(reimu.getX(), reimu.getY(), 47, 60, height-40);
 				orb[i].drawYinYang();
-
+				
 				//score text here!
 				al_draw_filled_rectangle(0, 490, width/2, 520, al_map_rgb(0, 0, 0));
 				al_draw_textf(text, al_map_rgb(255, 255, 255), 10, 490, 0, "SCORE: %i", score);

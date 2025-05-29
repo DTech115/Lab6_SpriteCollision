@@ -58,11 +58,12 @@ void yinyang::create_yinyang_bitmap(ALLEGRO_DISPLAY* display) {
 	al_draw_line(x - 5, y - 5, x, y - 5, al_map_rgb(255, 0, 0), 1);
 	al_draw_filled_circle(x, y - 4, 1, al_map_rgb(255, 255, 255)); //white eye
 	al_draw_filled_circle(x-3, y + 3, 1, al_map_rgb(255, 0, 0)); //red eye
+
 }
 
 void yinyang::erase_yinyang()
 {
-	al_draw_filled_rectangle(x, y, x + 5, y + 5, al_map_rgb(0, 0, 0)); //black color
+	al_draw_filled_rectangle(x, y, x + 16, y + 16, al_map_rgb(0, 0, 0)); //black color
 }
 
 int yinyang::move_yinyang(int reimuX, int reimuY, int width, int length, int height)
@@ -70,12 +71,12 @@ int yinyang::move_yinyang(int reimuX, int reimuY, int width, int length, int hei
 	y++;
 
 	if (x > reimuX && x < reimuX + width && y > reimuY && y < reimuY + length) {
-		al_draw_filled_rectangle(x, y, x + 5, y + 5, al_map_rgb(0, 0, 0)); //BLACK
+		al_draw_filled_rectangle(x, y, x + 32, y + 32, al_map_rgb(0, 0, 0)); //BLACK
 		alive = false;
 		return 1;
 	}
 	if (y > height) {
-		al_draw_filled_rectangle(x, y, x + 5, y + 5, al_map_rgb(0, 0, 0)); //BLACK
+		al_draw_filled_rectangle(x, y, x + 32, y + 32, al_map_rgb(0, 0, 0)); //BLACK
 		alive = false;
 	}
 	return 0;
