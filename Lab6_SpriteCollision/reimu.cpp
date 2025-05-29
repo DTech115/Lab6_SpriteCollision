@@ -198,9 +198,9 @@ void reimuClass::move_reimu(int width, int height)
 	}
 
 	//keep reimu inside the screen
-	if (x > width - 32)
+	if (x > width - 64)
 	{
-		x = width - 32;
+		x = width - 64;
 		speed = 0;
 	}
 	if (x < 0)
@@ -208,9 +208,9 @@ void reimuClass::move_reimu(int width, int height)
 		x = 0;
 		speed = 0;
 	}
-	if (y > height - 32)
+	if (y > height - 64)
 	{
-		y = height - 32;
+		y = height - 64;
 		speed = 0;
 	}
 	if (y < 0)

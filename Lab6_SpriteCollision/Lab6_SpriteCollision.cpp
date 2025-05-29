@@ -98,7 +98,7 @@ int main(void)
 			for (int i = 0; i < 10; i++)
 			{
 				orb[i].erase_yinyang();
-				score += orb[i].move_yinyang(reimu.getX(), reimu.getY(), 32, 32, height);
+				score += orb[i].move_yinyang(reimu.getX(), reimu.getY(), 47, 60, height);
 			}
 		}
 		al_flip_display();
